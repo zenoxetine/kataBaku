@@ -87,7 +87,7 @@ function handleAnswer(selectedButton) {
     } else {
         wrongCount++;
         wrongStat.textContent = wrongCount;
-        answerText.innerHTML = `Jawaban Anda, "${selectedText}", salah. <br> Jawaban yang benar adalah: "<a class='link' target='_blank' href='https://kbbi.web.id/${currentQuestion.baku}'>${currentQuestion.baku}</a>"`;
+        answerText.innerHTML = `Jawaban Anda, "${selectedText}", salah. <br> Jawaban yang benar adalah: "<a class='link' target='_blank' href='https://kbbi.kemdikbud.go.id/entri/${currentQuestion.baku}'>${currentQuestion.baku}</a>"`;
         answerText.className = 'answer-text wrong';
         playSound(false);
     }
