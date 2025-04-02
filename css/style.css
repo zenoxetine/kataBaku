@@ -7,13 +7,13 @@
 }
 
 :root {
-  --headingColor: #fffffe;
-  --textColor: #b7c1ec;
-  --buttonColor: #eebbc3;
-  --buttonTextColor: #232946;
-  --backgroundColor: #232946;
-  --correctColor: #00ebc7;
-  --wrongColor: #ff5470;
+  --headingColor: #029e9d;
+  --textColor: #2f3e46;
+  --buttonColor: #029e9d;
+  --buttonTextColor: #ffffff;
+  --backgroundColor: #ffffff;
+  --correctColor: #00b894;
+  --wrongColor: #d62828;
   --font: 'Nunito', sans-serif;
   --transition: all 0.3s linear;
   --radius: 2rem;
@@ -87,11 +87,7 @@ p {
   transition: var(--transition);
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-xl);
+  cursor: pointer;
 }
 
 @media screen and (min-width: 576px) {
@@ -101,11 +97,23 @@ p {
 }
 
 .footer {
+  font-size: smaller;
   height: var(--footerHeight);
-  background-color: #111;
+  background-color: var(--backgroundColor);;
   display: grid;
   place-items: center;
 }
+
+.link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.link:hover, .link:focus {
+  color: inherit;
+  text-decoration: underline;
+}
+
 
 .answer-text {
   opacity: 1;
@@ -151,34 +159,70 @@ p {
   font-size: 2rem;
 }
 
-/* sound */
-.btn-sound {
-  margin: 0 0.5rem;
-  width: 3rem;
-  padding: 0.5rem 0.5rem;
+/* Controls */
+.controls {
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 100;
+}
+
+.btn-sound, .btn-theme {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
   background-color: var(--buttonColor);
   border: transparent;
   color: var(--buttonTextColor);
-  border-radius: var(--radius);
-  transition: var(--transition);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: var(--shadow-md);
 }
 
-.btn-sound:hover {
-  transform: scale(1.2);
-}
-
-.sound-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.sound-container p {
-  margin-right: 0.5rem;
-}
-
-.btn-sound {
-  margin-left: 0.5rem;
+/* Mobile optimizations */
+@media screen and (max-width: 576px) {
+  .main-container {
+    width: 90vw;
+  }
+  
+  .underline {
+    width: 12rem;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .stat {
+    padding: 0.8rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .stat p {
+    font-size: 0.9rem;
+  }
+  
+  .stat .correct-count, .stat .wrong-count {
+    font-size: 1.5rem;
+  }
+  
+  .controls {
+    top: 0.25rem;
+    right: 0.25rem;
+  }
+  
+  .btn-sound, .btn-theme {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 0.9rem;
+  }
 }

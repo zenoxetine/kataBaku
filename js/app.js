@@ -1,76 +1,164 @@
-// Referensi: https://github.com/lantip/baku-tidak-baku
-var baku = ['Allah', 'Alquran', 'Alquran', 'Alquran', 'Asar', 'Buddha', 'Buddha', 'Februari', 'Februari', 'Filipina', 'Islamiah', 'Italia', 'Jumat', 'Kadiriah', 'Kamariah', 'Katolik', 'Kuraisy', 'Maha Pengasih', 'Mahabharata', 'Mahaesa', 'Mahakuasa', 'November', 'Quran', 'Rabu', 'Ramadan', 'Ramadan', 'Ramadan', 'Reaumur', 'Sanskerta', 'Syiwa', 'aberasi', 'abjad', 'abrek', 'absorpsi', 'adab', 'adagio', 'adhesi', 'adibusana', 'adidaya', 'adigang', 'adiguna', 'adigung', 'adik', 'adikodrati', 'adiluhung', 'adjektif', 'administrator', 'adven', 'advokat', 'aerobatik', 'afdal', 'agamais', 'agen', 'ajek', 'akekah', 'akhirat', 'akhirulkalam', 'akhlak', 'aki', 'akil', 'akseptor', 'aksesori', 'aksesori', 'akta', 'aktif', 'aktif', 'aktif', 'aktivis', 'aktivitas', 'aktual', 'akuades', 'akuarium', 'akuatik', 'akuntansi', 'akupunktur', 'akutan', 'alarm', 'alfa', 'aliah', 'alinea', 'alinea', 'alpa', 'alternatif', 'aluminium', 'aluminium', 'ambeien', 'ambin', 'ambulans', 'ambulans', 'amendemen', 'amfibi', 'amfibi', 'amin', 'amirulhaji', 'amonia', 'ampere', 'analisis', 'andal', 'anestesi', 'anggota', 'angpau', 'anode', 'antarumat beragama', 'antena', 'antologi', 'antre', 'antrean', 'anugerah', 'apa pun', 'apam', 'aparat', 'aplaus', 'apostrof', 'apostrof', 'apotek', 'arbitrer', 'aritmetika', 'arkeolog', 'arkeologi', 'artefak', 'asar', 'asas', 'asas', 'asasi', 'asli', 'astagfirullah', 'astronaut', 'asyik', 'ateis', 'ateret', 'atlet', 'atmosfer', 'atmosfer', 'audiensi', 'auditorium', 'auditorium', 'aulia', 'autentik', 'autobiografi', 'autodidak', 'autopsi', 'avokad', 'avokad', 'azab', 'azan', 'azimat', 'bahwasanya', 'baik', 'baka', 'bakmi', 'bakpao', 'bakso', 'balai', 'balans', 'balig', 'balsam', 'banderol', 'bapanda', 'bapanda', 'baptis', 'bargajul', 'barikade', 'barikade', 'barzakh', 'barzanj', 'batalion', 'baterai', 'baterai', 'baterai', 'batil', 'batin', 'bayangkara', 'bazar', 'beduk', 'begadang', 'beha', 'beker', 'belacu', 'belantika', 'beledu', 'beloon', 'belum', 'benatu', 'bengep', 'bengkuang', 'bengkuang', 'benzol', 'berahi', 'berandal', 'berengsek', 'bertemu', 'bertualang', 'beserta', 'beterbangan', 'beternak', 'bewok', 'biaya', 'bienial', 'bienial', 'biksu', 'biliar', 'biliun', 'biosfer', 'biseps', 'bitgula', 'blangko', 'blangko', 'blender', 'blokade', 'bobon', 'boling', 'bolpoin', 'bolpoin', 'bolpoin', 'bolpoin', 'bonafide', 'bor', 'bos', 'braille', 'bramacorah', 'brankas', 'bredel', 'bredel', 'brilian', 'brokat', 'bronkhitis', 'buana', 'budek', 'bujet', 'bulevar', 'bumiputra', 'bumper', 'bungalo', 'bungker', 'bungkuk', 'bus', 'buset', 'byarpet', 'cabai', 'cabai', 'cacat', 'cadel', 'camilan', 'capai', 'capai', 'capcai', 'cecak', 'cedera', 'celurit', 'celus', 'cendekia', 'cendekiawan', 'cenderamata', 'cengkeram', 'cengkerama', 'cengkih', 'cerek', 'cerita', 'cincong', 'cokelat', 'comro', 'daftar', 'dai', 'daif', 'dajal', 'dakwah', 'damping', 'darma', 'debit', 'debitor', 'debitur', 'degup', 'dekoratif', 'dekret', 'deodoran', 'depolitisasi', 'depot', 'deputi', 'desain', 'desain', 'desainer', 'desersi', 'desersi', 'deskripsi', 'detail', 'detail', 'detektif', 'detergen', 'deviasi', 'di antaranya', 'di mana', 'di mana pun', 'di sini', 'diagnosis', 'diagnosis', 'digresi', 'diler', 'dimungkiri', 'diode', 'disko', 'diskotek', 'dispenser', 'distilasi', 'ditambahkan', 'dividen', 'doa', 'dolar', 'domein', 'donator', 'doping', 'draf', 'dramatisasi', 'drumben', 'drumben', 'duafa', 'duafa', 'duha', 'durian', 'dus', 'e-mail', 'e-mail', 'efektif', 'efektif', 'efektif', 'efektif', 'efektivitas', 'eksem', 'eksem', 'ekshibisi', 'ekshibisi', 'eksim', 'ekspor', 'ekspor', 'ekstra', 'ekstrem', 'ekstrem', 'ekstrover', 'ekuivalen', 'ekuivalen', 'elektrode', 'elips', 'elite', 'emas', 'embus', 'empas', 'empu', 'enek', 'enjin', 'ensambel', 'ensiklopedi', 'entak', 'episode', 'epos', 'esai', 'esai', 'esens', 'esens', 'eskadron', 'etanol', 'fakih', 'faksimile', 'faksimile', 'faksimili', 'faksimili', 'familier', 'farmakope', 'fasih', 'feminin', 'feri', 'feri', 'filsuf', 'filsuf', 'finis', 'fitotoksoid', 'flat', 'flat', 'fobi', 'fobia', 'folio', 'folklor', 'fondasi', 'formal', 'foto', 'fotokopi', 'fotokopi', 'fotokopi', 'fotokopi', 'fotosintesis', 'fotosintesis', 'frasa', 'frase', 'frekuensi', 'frigid', 'front', 'frustrasi', 'furnitur', 'gaib', 'gaib', 'galaktosa', 'galeri', 'galeri', 'game', 'gana-gini', 'gandewa', 'gandewa', 'gap', 'garebek', 'garebek', 'gazal', 'geiser', 'geladi', 'geladi bersih', 'geladi bersih', 'gelepot', 'gelepotan', 'gelondong', 'gembel', 'genealogi', 'genealogi', 'genius', 'genting', 'gerebek', 'gereget', 'gerejawi', 'gerendel', 'gerobak', 'gerogol', 'gila', 'gips', 'gizi', 'gladi', 'glamor', 'glaukoma', 'glosarium', 'glukosa', 'gongseng', 'gongseng', 'gorden', 'gorden', 'gorden', 'griya', 'gros', 'gua', 'gubuk', 'gudeg', 'guncang', 'gurami', 'gurami', 'guyup', 'hadis', 'hafal', 'hakikat', 'hal-hal', 'hanacaraka', 'handaitulan', 'harfiah', 'hektare', 'herbivor', 'heterogen', 'hibrida', 'hidraulis', 'hierarki', 'hieroglif', 'higiene', 'higiene', 'himne', 'hipermetropia', 'hipotek', 'hipotesis', 'hipovitaminosis', 'hobi', 'holistis', 'holistis', 'horizon', 'ibtidaiah', 'idah', 'ideal', 'ideal', 'ideologi', 'ihwal', 'ijazah', 'ijazah', 'ijmak', 'ikhlas', 'ikhlas', 'iktibar', 'iktikad', 'iktikaf', 'ilusi', 'imaginasi', 'imbau', 'impit', 'impor', 'indera', 'indra', 'influenza', 'influenza', 'inframerah', 'infus', 'ingar', 'ingar-bingar', 'inkam', 'inkarsunah', 'inkarsunah', 'inkognito', 'innalillahi wa innalillahi rajiun', 'insaf', 'inset', 'insting', 'intelegensi', 'inteligensi', 'intelijen', 'intelijen', 'intens', 'interes', 'interkontinental', 'interkontinental', 'intermeso', 'internis', 'interogasi', 'interpelasi', 'interpretasi', 'interupsi', 'introspeksi', 'introver', 'inventarisasi', 'ionosfer', 'iradat', 'iradat', 'irasional', 'irasional', 'isap', 'israk', 'istigfar', 'istikamah', 'istinjak', 'istri', 'izin', 'jadwal', 'jadwal', 'jagat', 'jahiliah', 'jail', 'jajar', 'jalangkung', 'jalangkung', 'jamaah', 'jamaah', 'jarit', 'jemawa', 'jenazah', 'jenderal', 'jenius', 'jerapah', 'jerapah', 'jerembab', 'jerembap', 'jeriken', 'jip', 'jip', 'jisim', 'joging', 'join', 'jomlo', 'jorjoran', 'juadah', 'jubileum', 'judikatif', 'judisial', 'judo', 'jujitsu', 'jujitsu', 'junior', 'junktur', 'jurisdiksi', 'justru', 'juz', 'kacamata', 'kacoak', 'kadariah', 'kadi', 'kafah', 'kafetaria', 'kaidah', 'kakaktua', 'kakaktua', 'kakawin', 'kakbah', 'kakbah', 'kalam', 'kalam', 'kalbu', 'kaleidoskop', 'kalkarium', 'kamat', 'kamerawan', 'kamerawan', 'kamuflase', 'kanaah', 'kanguru', 'kanker', 'kantong', 'karapan', 'karawitan', 'karburasi', 'karburator', 'kardus', 'karena', 'karier', 'karisma', 'karismatik', 'karunia', 'kasidah', 'kasidah', 'kasip', 'kastel', 'kasturi', 'katai', 'katalepsi', 'katalisis', 'katapel', 'kategori', 'katekis', 'katering', 'katering', 'katode', 'kaul', 'kaus', 'kayangan', 'kayangan', 'ke mana', 'kedaluwarsa', 'kedaluwarsa', 'kedaluwarsa', 'kedelai', 'kedip', 'kejibeling', 'kejibeling', 'kelar', 'kelekatu', 'kelemak-kelemek', 'kelengar', 'kelengar', 'kelengkeng', 'kelenik', 'kelop', 'keloter', 'keluak', 'keluih', 'kemboja', 'kemenyan', 'kempis', 'kendur', 'kenop', 'kepok', 'keram', 'keramat', 'keremi', 'keresek', 'keretek', 'kerja sama', 'kerucil', 'kesuma', 'kesuma', 'ketilang', 'khotbah', 'kiai', 'kilowatt', 'klab', 'klep', 'kleptomania', 'kles', 'klien', 'klor', 'kloropil', 'kloset', 'knalpot', 'knop', 'koboi', 'kokpit', 'koktail', 'kolintang', 'kolumnis', 'komersial', 'komoditas', 'komplet', 'komplet', 'konfirmasi', 'kongko', 'kongres', 'konkret', 'konkret', 'konkret', 'konsekuen', 'kontinu', 'koordinasi', 'koper', 'kor', 'korps', 'korsleting', 'kosen', 'kosmonaut', 'kreatif', 'kreatif', 'kreativitas', 'kredit', 'krol', 'kru', 'kru', 'kuaci', 'kualitas', 'kualitas', 'kuantitas', 'kuartal', 'kucar-kacir', 'kuitansi', 'kuitansi', 'kumpul kerbau', 'kumulus', 'kuna', 'kungfu', 'kunut', 'kuota', 'kurma', 'labah-labah', 'lafal', 'lafal', 'lahir', 'lahir', 'lahir', 'laknat', 'lamtaragung', 'laskar', 'lavendel', 'lazim', 'lazim', 'leding', 'legalisasi', 'legende', 'lemari', 'lembap', 'leukemia', 'lever', 'leveransir', 'lihat', 'limfa', 'limpa', 'linear', 'litoral', 'lobi', 'lokalisasi', 'longmars', 'longmars', 'lotre', 'luak', 'lubang', 'luks', 'luntang-lantung', 'lusin', 'lusin', 'lusin', 'maaf', 'mabuk', 'madukara', 'mafhum', 'mafhum', 'mag', 'magnet', 'magrib', 'mahardika', 'mahesa', 'mahfuz', 'maizena', 'mak comblang', 'makam', 'makam', 'makhdum', 'makhluk', 'makrifat', 'makroekonomi', 'makruf', 'malapraktik', 'malapraktik', 'malapraktik', 'malapraktik', 'mampat', 'manajer', 'mandam', 'mandam', 'mandek', 'maneken', 'mangkuk', 'mantap', 'mantra', 'manuskrip', 'maraton', 'margarin', 'marginal', 'masjid', 'maskawin', 'massal', 'masyhur', 'matahari', 'matematika', 'mazhab', 'mbalela', 'mebel', 'media massa', 'megaton', 'megawatt', 'melodi', 'mencuci', 'menerapkan', 'menerjemahkan', 'menertawakan', 'menopause', 'mentimun', 'mentimun', 'mentol', 'menyolok', 'merek', 'merem', 'merkurokrom', 'mes', 'mestika', 'metanol', 'meterai', 'meterai', 'metode', 'mi', 'migrain', 'mikraj', 'mikrobe', 'mikroekonomi', 'miliampere', 'miliar', 'miliarder', 'miliuner', 'miliuner', 'miop', 'miopia', 'misi', 'mitos', 'mobilisasi', 'modern', 'monarki', 'monoteis', 'monotipe', 'montase', 'moral', 'mosaik', 'motto', 'muamalat', 'muasal', 'muazin', 'mubalig', 'mubaligat', 'mukadimah', 'mukadimah', 'mukjizat', 'mukjizat', 'multifungsi', 'mumi', 'muncikari', 'mungkir', 'mursyid', 'musabab', 'musafir', 'musala', 'musala', 'musala', 'museum', 'musim hujan', 'naas', 'nakhoda', 'nakhoda', 'nanas', 'napas', 'narkotik', 'nasihat', 'nazar', 'nazar', 'negatif', 'negeri', 'negosiasi', 'neka-neka', 'neokolonialisme', 'neting', 'neto', 'netralisasi', 'nifas', 'nikmat', 'ninabobo', 'nomad', 'nomor', 'non-Indonesia', 'nonaktif', 'nonaktif', 'nonsens', 'notula', 'objek', 'objektif', 'omzet', 'opelet', 'orang tua', 'oranye', 'organisasi', 'orisinal', 'orkestra', 'orkestra', 'osmose', 'oto', 'otobiografi', 'otomatis', 'otomatis', 'pacat', 'paderi', 'paham', 'palm', 'pamflet', 'pamflet', 'panau', 'pancaindera', 'panitera', 'pankreas', 'paradoks', 'paramedis', 'parasut', 'parogog', 'pascapanen', 'pascapanen', 'pasfoto', 'pasfoto', 'pasif', 'pasif', 'pasif', 'paspor', 'paten', 'patri', 'patriarkat', 'patrilineal', 'paviliun', 'paviliun', 'pedas', 'pedepokan', 'peduli', 'pelamin', 'pelesetan', 'pelesir', 'peleton', 'pelihara', 'pelihara', 'pelintir', 'pelonco', 'pelontos', 'pemirsa', 'pempek', 'penasihat', 'pendapa', 'penembahan', 'perajin', 'peranti', 'petai', 'petai', 'piama', 'pihak', 'pikir', 'populer', 'porselen', 'porselen', 'praktik', 'proklamasi', 'provinsi', 'provinsi', 'proyek', 'proyek', 'putra', 'qari', 'qariah', 'radioaktif', 'rakaat', 'rakaat', 'rakaat', 'rama', 'ranking', 'ranking', 'ransel', 'ransel', 'rapi', 'rapor', 'rapor', 'rapot', 'rasialis', 'rasional', 'razia', 'razia', 'real', 'realisasi', 'rekrut', 'relai', 'relai', 'relief', 'rematik', 'rembuk', 'renaisans', 'renaisans', 'reptilia', 'reservoar', 'respons', 'restoran', 'restoran', 'resume', 'rezeki', 'rezeki', 'rezeki', 'rezeki', 'rezim', 'rezim', 'rida', 'riil', 'risiko', 'ritma', 'ritsleting', 'rizki', 'rizki', 'roker', 'romusa', 'rongrong', 'rontgen', 'rubuh', 'ruh', 'ruhaniwan', 'rukuk', 'rute', 'saf', 'sah', 'sahabat', 'sahdu', 'sahib', 'sai', 'sajak', 'sakaguru', 'sakaguru', 'sakaguru', 'sakarin', 'sakelar', 'saksama', 'salat', 'salat', 'sambal', 'sampo', 'sampo', 'sanawiah', 'sanawiah', 'sandal', 'sanggama', 'sangsi', 'sanksi', 'saptapesona', 'saraf', 'saraf', 'saraf', 'sarsaparila', 'satai', 'satir', 'saus', 'sedekah', 'sedekah', 'sediakala', 'sein', 'sein', 'sein', 'sejarawan', 'sekadar', 'sekop', 'sekretaris', 'sekring', 'seks', 'seksi', 'seksual', 'sektarian', 'sekte', 'sekular', 'selendro', 'selesma', 'selulosa', 'semadi', 'semadi', 'sembrana', 'semenda', 'senapati', 'sengkalan', 'sengse', 'sentigram', 'sentimental', 'sentimeter', 'sentosa', 'sentral', 'sentral', 'sepatbor', 'sepatbor', 'sepatbor', 'seprai', 'seprai', 'seprai', 'sepur', 'sepur', 'serai', 'serai', 'serban', 'serbaneka', 'serbaneka', 'seriawan', 'serigala', 'sertifikat', 'serunai', 'servis', 'setagen', 'setagen', 'setan', 'setan', 'setip', 'setir', 'setrika', 'setrip', 'seyogianya', 'sfing', 'sfing', 'sfing', 'siapa pun', 'siar', 'siar', 'sifilis', 'sifilis', 'sigaret', 'silakan', 'silaturahmi', 'silaturahmi', 'silinder', 'silinder', 'simpel', 'sinagoge', 'sindrom', 'sinekdoke', 'sinkop', 'sinse', 'sintesis', 'sintesis', 'sintetis', 'sirene', 'sirop', 'sirup', 'sirup', 'sistem', 'sistem', 'ski', 'skolastik', 'skolastik', 'skor', 'skor', 'skor', 'skors', 'skors', 'skors', 'slang', 'slang', 'slang', 'smes', 'sodet', 'sofbal', 'sofbal', 'solenoide', 'sombrero', 'sombrero', 'sop', 'sop', 'sopir', 'sosiodrama', 'spageti', 'spageti', 'spanduk', 'spesial', 'spesial', 'spesies', 'spesies', 'spionase', 'spiritual', 'spiritus', 'spiritus', 'spiritus', 'spitbot', 'spitbot', 'spons', 'spons', 'sprin', 'srek', 'stan', 'standar', 'standar', 'standardisasi', 'stanza', 'stanza', 'starter', 'stereotip', 'stiker', 'stok', 'stoples', 'strategis', 'stres', 'striker', 'striker', 'stroberi', 'stroberi', 'stroberi', 'stroke', 'studio foto', 'subbab', 'subbagian', 'subjek', 'subkontraktor', 'subsider', 'substansi', 'substitusi', 'subtropik', 'subunit', 'sukacita', 'suling', 'sunah', 'sundal', 'sup', 'supermen', 'suplemen', 'suplemen', 'supremasi', 'surah', 'surga', 'surga', 'survei', 'survei', 'survei', 'survei', 'susastra', 'sutera', 'suvenir', 'swasembada', 'sweter', 'swipoa', 'swipoa', 'syafaat', 'syahadat', 'syahid', 'syahid', 'syahwat', 'syariat', 'syarikat', 'syekh', 'syekh', 'syirik', 'syogun', 'syubhat', 'syubhat', 'syuhada', 'syukur', 'syur', 'taala', 'tablig', 'tahiat', 'takhta', 'taksi', 'takwa', 'takzim', 'takzim', 'talk', 'tampak', 'tamsil', 'tanker', 'taoco', 'taoge', 'taoge', 'tapai', 'taplak', 'tarikat', 'tarikat', 'tarkhim', 'tarkhim', 'tata niaga', 'tato', 'tawaf', 'tawakal', 'teater', 'tekad', 'teknik', 'teknik', 'teknologi', 'teknologi', 'teladan', 'teladan', 'teladan', 'telanjur', 'telantar', 'telentang', 'telepon', 'telepon', 'telepon', 'telepon', 'telur', 'temu giring', 'tenggiling', 'tenteram', 'teologi', 'teoretis', 'tepaselira', 'tepaselira', 'tepercaya', 'teperdaya', 'terampil', 'terburu', 'terengginas', 'terima kasih', 'teripang', 'teritis', 'teromol', 'tertawa', 'terubus', 'teruna', 'terung', 'terwelu', 'terwelu', 'terzina', 'tes', 'tesis', 'test', 'tetapi', 'tifus', 'tiket', 'tim', 'tip', 'tipe', 'toapekong', 'toapekong', 'tobat', 'tokek', 'tokek', 'toleransi', 'tonil', 'topas', 'tophit', 'torpedo', 'tradisional', 'trafo', 'trakom', 'trakom', 'trans-Jakarta', 'tribune', 'trienale', 'triliun', 'tripleks', 'tripleks', 'trofi', 'trofi', 'trofosfer', 'trotoar', 'tumenggung', 'tunanetra', 'tungra', 'tur', 'turbojet', 'turis', 'turnamen', 'turnamen', 'tuts', 'ubah', 'ubah', 'ubrak-abrik', 'ujian ulang', 'ukhrawi', 'ukulele', 'ultramodern', 'unek-unek', 'urine', 'usada', 'ustaz', 'ustaz', 'ustazah', 'utang', 'vak', 'vaksinasi', 'vakum', 'vakum', 'valentine', 'valid', 'vampir', 'vanili', 'vanili', 'varietas', 'varises', 'vas', 'vaskular', 'vegetaris', 'vermak', 'vernis', 'vila', 'vinyet', 'zaman', 'zamzam', 'zat', 'zhuhur', 'zhuhur', 'zigot', 'zigot', 'zigzag', 'zikir', 'zina', 'zina', 'ziter', 'ziter', 'zona', 'zuhur', 'zuhur', 'ateisme', 'berantas', 'berpikir', 'bertanggung jawab', 'brankas', 'debitur', 'digit', 'diferensial', 'dram', 'donatur', 'ensiklopedia', 'gizi', 'hangus', 'herpes', 'heterografi', 'histori', 'khatam', 'khawatir', 'klien', 'kliping', 'kloter', 'netralisasi', 'februari', 'filipina', 'sanskerta', 'selektivitas', 'walikota', 'yogyakarta', 'yudikatif', 'yudisial', 'yurisdiksi', 'zamrud', 'zig-zag']
-var tidakBaku = ['Alloh', "Al Qur'an", "Al-Qur'an", 'Al-Quran', 'Azhar', 'Buda', 'Budha', 'February', 'Pebruari', 'Philipina', 'Islamiyah', 'Itali', "Jum'at", 'Qodiriyah', 'Qomariyah', 'Katholik', 'Quraisy', 'Mahapengasih', 'Mahabarata', 'Maha Esa', 'Maha Kuasa', 'Nopember', "Qur'an", 'Rebo', 'Ramadhan', 'Romadhon', 'Romadlon', 'Reamur', 'Sansekerta', 'Siwa', 'abrasi', 'abjat', 'abreg', 'absorsi', 'adap', 'adegio', 'adesi', 'adi busana', 'adi daya', 'adi gang', 'adi guna', 'adi gung', 'adek', 'adi kodrati', 'adi luhung', 'ajektif', 'admin', 'advent', 'adpokat', 'erobatik', 'afdol', 'agamis', 'agent', 'ajeg', 'akikah', 'akherat', 'akhirul kalam', 'akhlaq', 'accu', 'aqil', 'aseptor', 'aksesoris', 'asesori', 'akte', 'aktip', 'aktiv', 'aktive', 'aktifis', 'aktifitas', 'aktuil', 'aquades', 'aquarium', 'aquatik', 'akutansi', 'akupuntur', 'akuntan', 'alaram', 'alpha', 'aliyah', 'alenia', 'alinia', 'alfa', 'alternatip', 'almunium', 'alumunium', 'ambeyen', 'amben', 'ambulan', 'ambulance', 'amandemen', 'amphibi', 'ampibi', 'amien', 'amirulhaj', 'amoniak', 'amper', 'analisa', 'handal', 'anestesia', 'anggauta', 'angpao', 'anoda', 'antar umat beragama', 'antene', 'antalogi', 'antri', 'antrian', 'anugrah', 'apapun', 'apem', 'aparatur', 'aplus', 'apostrop', 'opostrop', 'apotik', 'arbiter', 'aritmatika', 'arkheolog', 'arkheologi', 'artifak', 'ashar', 'azas', 'azaz', 'azasi', 'aseli', 'astaghfirullah', 'astronot', 'asik', 'atheis', 'atret', 'atlit', 'atmosfir', 'atmosphere', 'audiens', 'aditorium', 'oditorium', 'auliya', 'otentik', 'otobiografi', 'otodidak', 'otopsi', 'alpokat', 'alpukat', 'azhab', 'adzan', 'ajimat', 'bahwasannya', 'baek', 'baqa', 'bakmie', 'bakpau', 'baso', 'bale', 'balance', 'baligh', 'balsem', 'bandrol', 'bapakda', 'bapaknda', 'babtis', 'bergajul', 'barigade', 'brigade', 'barzah', 'berjanji', 'batalyon', 'batere', 'baterei', 'batre', 'bathil', 'bathin', 'bhayangkara', 'bazaar', 'bedug', 'bergadang', 'BH', 'weker', 'blacu', 'blantika', 'beludru', 'bloon', 'belom', 'binatu', 'bengap', 'bengkoang', 'bengkowang', 'bensol', 'birahi', 'brandal', 'brengsek', 'ketemu', 'berpetualang', 'berserta', 'berterbangan', 'berternak', 'brewok', 'beaya', 'bienale', 'biennale', 'bhiku', 'bilyar', 'bilyun', 'biosfir', 'bisep', 'gulabit', 'belangko', 'blanko', 'belender', 'blokir', 'bombon', 'bowling', 'balpoin', 'bolpen', 'bolpoint', 'polpen', 'bonafid', 'bur', 'boss', 'braile', 'bromocorah', 'brangkas', 'breidel', 'bridel', 'brilyan', 'brokad', 'bronkitis', 'bhuana', 'budeg', 'budget', 'boulevard', 'bumiputera', 'bemper', 'bungalow', 'bangker', 'bongkok', 'bis', 'busyet', 'biarpet', 'cabay', 'cabe', 'cacad', 'cedal', 'cemilan', 'cape', 'capek', 'cap cai', 'cicak', 'cidera', 'clurit', 'celos', 'cendikia', 'cendikiawan', 'cinderamata', 'cengkram', 'cengkrama', 'cengkeh', 'ceret', 'ceritera', 'cingcong', 'coklat', 'combro', 'daptar', "da'i", 'dhoif', 'dajjal', "da'wah", 'dumping', 'dharma', 'debet', 'debitur', 'debetur', 'degub', 'dekoratip', 'dekrit', 'deodorant', 'depolitisir', 'depo', 'deputy', 'design', 'disain', 'disainer', 'diserse', 'disersi', 'diskripsi', 'detel', 'detil', 'detektip', 'deterjen', 'defiasi', 'diantaranya', 'dimana', 'dimanapun', 'disini', 'diagnosa', 'diagnose', 'degresi', 'dealer', 'dipungkiri', 'dioda', 'disco', 'diskotik', 'despenser', 'destilasi', 'ditambahin', 'deviden', "do'a", 'dollar', 'domain', 'donatur', 'dopping', 'draft', 'dramatisir', 'dramben', 'drum band', "dhu'afa", 'dhuafa', 'dhuha', 'duren', 'dos', 'email', 'imel', 'efektip', 'efektive', 'epektif', 'epektip', 'efektifitas', 'eksim', 'exim', 'eksebisi', 'eksibisi', 'eksem', 'eksport', 'export', 'extra', 'ekstrim', 'extrim', 'ekstrovert', 'ekwivalen', 'equivalen', 'elektroda', 'elip', 'elit', 'mas', 'hembus', 'hempas', 'mpu', 'eneg', 'engine', 'ansambel', 'ensiklopedia', 'hentak', 'episod', 'ephos', 'essai', 'essay', 'esen', 'esense', 'sekuadron', 'ethanol', 'faqih', 'faksimil', 'faksimili', 'facsimil', 'faximil', 'familiar', 'farmakop', 'faseh', 'feminim', 'ferri', 'fery', 'filosof', 'filsof', 'finish', 'fitoksoit', 'plat', 'plet', 'phobi', 'phobia', 'polio', 'foklor', 'pondasi', 'formil', 'photo', 'foto copy', 'foto kopi', 'photo copy', 'photo kopi', 'fotosintesa', 'fotosintetis', 'frase', 'frasa', 'frekwensi', 'frigit', 'fron', 'frustasi', 'furniture', 'ghaib', 'ghoib', 'galaktose', 'galery', 'galleri', 'gamma', 'gono-gini', 'gandewo', 'gendewa', 'gep', 'garebeg', 'grebeg', 'gasal', 'geyser', 'gladi', 'geladi resik', 'gladibersih', 'belepot', 'berlepotan', 'glondong', 'jembel', 'geneaologi', 'geneologi', 'jenius', 'genteng', 'grebek', 'greget', 'gerejani', 'grendel', 'gerobag', 'grogol', 'gelo', 'gip', 'gisi', 'geladi', 'glamour', 'glukoma', 'glosary', 'glukose', 'ongseng', 'oseng-oseng', 'horden', 'hordeng', 'korden', 'gria', 'gross', 'goa', 'gubug', 'gudek', 'goncang', 'grameh', 'gurameh', 'guyub', 'hadist', 'hapal', 'hakekat', 'hal-ihwal', 'honocoroko', 'handaitaulan', 'harafiah', 'hektar', 'herbivora', 'hetrogen', 'hybrida', 'hidrolis', 'hirarki', 'hiroglif', 'higiena', 'hygiene', 'hymne', 'hipermetri', 'hipotik', 'hipotesa', 'hipovitaminose', 'hobby', 'holistic', 'holistik', 'horison', 'ibtidaiyah', 'iddah', 'idial', 'idiil', 'idiologi', 'ikhwal', 'ijasah', 'izajah', "ijma'", 'ihlas', 'iklas', "i'tibar", 'itikad', "i'tikaf", 'illusi', 'imajinasi', 'himbau', 'himpit', 'import', 'indra', 'indera', 'influensa', 'influinza', 'infra merah', 'inpus', 'hingar', 'hingar-bingar', 'income', 'Ingkarsunah sunah', 'inkar sunah', 'incognito', "innalillahiwa innalillahi roji'un", 'insyaf', 'inzet', 'instink', 'intelejensi', 'intelegensi', 'intel', 'inteligen', 'inten', 'interest', 'inter kontinental', 'intercontinental', 'intermezo', 'internist', 'interograsi', 'interplasi', 'interprestasi', 'intrupsi', 'interospeksi', 'introvert', 'inventarisir', 'ionosfir', 'iradah', 'irodah', 'irasionil', 'irrasional', 'hisap', "isra'", 'istighfar', 'istiqomah', "istinja'", 'isteri', 'ijin', 'jadual', 'jaduwal', 'jagad', 'jahiliyah', 'jahil', 'jejer', 'jaelangkung', 'jailangkung', 'jemaah', 'jemaat', 'jarik', 'jumawa', 'jenasah', 'jendral', 'genius', 'zarafah', 'zerafah', 'jerembap', 'jerembab', 'jerigen', 'jeep', 'jep', 'jizim', 'jogging', 'joint', 'jomblo', 'jor-joran', 'jadah', 'jubilum', 'yudikatif', 'yudisial', 'yudo', 'jiujitsu', 'yuyitsu', 'yunior', 'jungtur', 'yurisdiksi', 'justeru', 'jus', 'kaca mata', 'kecoak', 'qodariyah', 'qodi', 'kaffah', 'cafetaria', 'kaedah', 'kakak tua', 'kakatua', 'kekawin', 'kaabah', "ka'bah", 'qalam', 'qolam', 'qolbu', 'kaleidioskop', 'kalkarim', 'qomat', 'kameraman', 'kameramen', 'kamuplase', "qona'ah", 'kangguru', 'kangker', 'kantung', 'kerapan', 'kerawitan', 'kaburasi', 'kaburator', 'kerdus', 'karna', 'karir', 'kharisma', 'kharismatik', 'kurnia', 'qasidah', 'qosidah', 'kasep', 'kastil', 'kesturi', 'kate', 'katalepsia', 'katalisa', 'ketapel', 'katagori', 'kataketis', 'cathering', 'katring', 'katoda', 'khaul', 'kaos', 'kahyangan', 'khayangan', 'kemana', 'kadaluarsa', 'kadaluwarsa', 'kedaluarsa', 'kedele', 'kerdip', 'kecibeling', 'keji beling', 'klar', 'kelakatu', 'klemak-klemek', 'kelenger', 'klenger', 'klengkeng', 'klenik', 'klop', 'kloter', 'kluwak', 'kluwih', 'kamboja', 'menyan', 'kempes', 'kendor', 'knop', 'gepok', 'kram', 'kramat', 'kremi', 'kresek', 'kretek', 'kerjasama', 'krucil', 'kesumah', 'kusuma', 'kutilang', 'khutbah', 'kyai', 'kilo watt', 'club', 'kelep', 'kleptomani', 'clash', 'clien', 'chlor', 'klorofil', 'closet', 'kenalpot', 'kenop', 'koboy', 'cockpit', 'cocktail', 'kulintang', 'kolomnis', 'komersil', 'komoditi', 'komplit', 'kumplit', 'komfirmasi', 'kongkow', 'konggres', 'kongkret', 'kongkrit', 'konkrit', 'konsekwen', 'kontinyu', 'koordinir', 'kopor', 'koor', 'korp', 'konsleting', 'kusen', 'kosmonot', 'kreatip', 'kreative', 'kreatifitas', 'kridit', 'kerol', 'cru', 'krew', 'kwaci', 'kwalitas', 'kwalitet', 'kwantitas', 'kwartal', 'kocar-kacir', 'kwitangsi', 'kwitansi', 'kumpul kebo', 'cumulus', 'kuno', 'kung fu', 'qunut', 'kwota', 'korma', 'laba-laba', 'lapal', 'rapal', 'dhohir', 'zahir', 'zohir', "la'nat", 'lamtorogung', 'lasykar', 'levender', 'lajim', 'lasim', 'ledeng', 'legalisir', 'legenda', 'almari', 'lembab', 'leukimia', 'liver', 'laveransir', 'liat', 'limfe', 'limpha', 'linier', 'literal', 'loby', 'lokalisir', 'long march', 'longmarch', 'lotere', 'luwak', 'lobang', 'lux', 'lontang-lantung', 'dosin', 'dozen', 'losin', "ma'af", 'mabok', 'madukoro', 'mafum', "ma'fum", 'maag', 'mahnet', 'maghrib', 'mahardhika', 'maesa', 'mahfudz', 'maisena', 'makcomblang', 'maqam', 'maqom', 'makdum', 'mahluk', "ma'rifat", 'makro ekonomi', "ma'ruf", 'mala praktek', 'mala-praktek', 'malpraktek', 'malpraktik', 'mampet', 'manager', 'mendam', 'mendem', 'mandeg', 'manekin', 'mangkok', 'mantab', 'mantera', 'manuskrif', 'marathon', 'margarine', 'marjinal', 'mesjid', 'mas kawin', 'masal', 'mashur', 'mentari', 'matematik', 'madzab', 'mbalelo', 'mebeler', 'mass media', 'mega ton', 'mega watt', 'melody', 'menyuci', 'menterapkan', 'menterjemahkan', 'mentertawakan', 'monopause', 'ketimun', 'timun', 'menthol', 'mencolok', 'merk', 'meram', 'merkurokrum', 'mess', 'mustika', 'methanol', 'materai', 'metrei', 'metoda', 'mie', 'migren', "mi'raj", 'mikroba', 'mikro ekonomi', 'mill ampere', 'milyar', 'milyader', 'milyoner', 'milyuner', 'miyop', 'miopi', 'missi', 'mithos', 'mobilisir', 'moderen', 'monarkhi', 'monotheis', 'monotype', 'montage', 'moril', 'mozaik', 'moto', 'muamalah', 'asal-muasal', 'muadzin', 'mubaligh', 'mubalighoh', 'muqaddimah', 'muqadimah', "mu'jizat", 'mukjijat', 'multi fungsi', 'mummi', 'mucikari', 'pungkir', 'mursid', 'sebab-musabab', 'musyafir', 'mushala', 'musholah', 'musholla', 'musium', 'musim penghujan', 'nahas', 'nahkoda', 'nakoda', 'nenas', 'nafas', 'narkotika', 'nasehat', 'nadar', 'nadzar', 'negatip', 'negri', 'negoisasi', 'neko-neko', 'neo-kolonialisme', 'netting', 'netto', 'netralisir', 'nipas', "ni'mat", 'nina bobo', 'nomaden', 'nomer', 'non Indonesia', 'non aktif', 'non-aktif', 'nonsen', 'notulen', 'obyek', 'obyektif', 'omset', 'oplet', 'orangtua', 'orange', 'organisir', 'orisinil', 'orchestra', 'orkhestra', 'osmosis', 'otto', 'autobiografi', 'automatic', 'automatis', 'pacet', 'padri', 'faham', 'palem', 'famplet', 'pamfelet', 'panu', 'panca indra', 'panitra', 'pangkreas', 'paradox', 'paramedik', 'parasit', 'paragoge', 'pasca panen', 'pasca-panen', 'pas foto', 'pas photo', 'fasip', 'pasip', 'pasive', 'pasport', 'patent', 'pateri', 'patriakat', 'patrilinial', 'paviliyun', 'pavilyun', 'pedes', 'padepokan', 'perduli', 'pelaminan', 'plesetan', 'plesir', 'pleton', 'peliara', 'piara', 'plintir', 'plonco', 'plontos', 'pirsawan', 'empek-empek', 'penasehat', 'pendopo', 'panembahan', 'pengrajin', 'piranti', 'petay', 'pete', 'piyama', 'fihak', 'fikir', 'popular', 'porcelain', 'porselain', 'praktek', 'proklamir', 'profinsi', 'propinsi', 'project', 'projek', 'putera', 'qori', 'qoriah', 'radio aktif', "raka'at", "reka'at", 'rekaat', 'romo', 'rangking', 'rengking', 'rangsel', 'ranzel', 'rapih', 'raport', 'rapot', 'rapor', 'rasialist', 'rasionil', 'rajia', 'rasia', 'riil', 'realisir', 'rekruit', 'rilai', 'rile', 'relif', 'reumatik', 'rembug', 'renaisan', 'renaisance', 'reptil', 'reservoir', 'respon', 'restauran', 'restaurant', 'resum', 'rejeki', 'rezki', 'rizki', 'rizqi', 'regim', 'rejim', 'ridho', 'real', 'resiko', 'ritme', 'ritsluiting', 'rezeki', 'riski', 'rocker', 'romusha', 'rong-rong', 'ronsen', 'roboh', 'roh', 'rohaniawan', "ruku'", 'route', 'shaf', 'syah', 'sobat', 'syahdu', 'sokhib', "sa'i", 'sanjak', 'saka guru guru', 'soko guru', 'sokoguru', 'sakharin', 'saklar', 'seksama', 'shalat', 'sholat', 'sambel', 'shampo', 'shampoo', 'sanawiyah', 'tsanawiyah', 'sendal', 'senggama', 'sanksi', 'sangsi', 'sapta pesona', 'sarap', 'syaraf', 'syarap', 'saparila', 'sate', 'satire', 'saos', 'sodakoh', 'sodaqoh', 'sedia kala', 'seign', 'sen', 'sign', 'sejarahwan', 'sekedar', 'skop', 'sekertaris', 'sekering', 'sex', 'sie', 'seksuil', 'sekterian', 'sekta', 'sekuler', 'slendro', 'salesma', 'selulose', 'samadi', 'semedi', 'sembrono', 'semanda', 'senopati', 'sangkalan', 'sinse', 'centigram', 'sentimentil', 'centimeter', 'sentausa', 'central', 'sentra', 'sepakbor', 'spakbor', 'spakbort', 'sepre', 'seprei', 'sprai', 'spor', 'spur', 'sere', 'sereh', 'sorban', 'serba aneka', 'serba neka', 'sariawan', 'srigala', 'sertipikat', 'seruni', 'service', 'stagen', 'tagen', 'syaiton', 'syetan', 'stip', 'stir', 'seterika', 'strip', 'seyogyanya', 'sping', 'spink', 'spinx', 'siapapun', 'syiar', "syi'ar", 'siphilis', 'sipilis', 'cigaret', 'silahkan', 'silaturohmi', 'silaturrahmi', 'selinder', 'slinder', 'simple', 'sinagog', 'sindrome', 'senikdok', 'sinkope', 'sense', 'sintesa', 'sintese', 'sintesis', 'sirine', 'sirup', 'sirop', 'syrup', 'sistim', 'system', 'sky', 'sekolastik', 'skholastik', 'score', 'sekor', 'skore', 'sekores', 'sekors', 'skorsing', 'slank', 'sleng', 'slenk', 'smash', 'sudet', 'sofball', 'softball', 'solenoid', 'sambrero', 'sopmberero', 'soup', 'sup', 'supir', 'sosio drama', 'spagetti', 'spagheti', 'sepanduk', 'sepesial', 'special', 'sepesies', 'species', 'sepionase', 'spirituil', 'sepiritus', 'sepirtus', 'spritus', 'speedboat', 'speedbot', 'sepon', 'spon', 'sprint', 'sreg', 'stand', 'standard', 'standart', 'standarisasi', 'setansa', 'stansa', 'stater', 'stereotipe', 'sticker', 'stock', 'toples', 'stratejik', 'stress', 'setriker', 'stricker', 'strawberi', 'strawberry', 'strawbery', 'strok', 'foto studio', 'sub bab', 'sub bagian', 'subyek', 'sub kontraktor', 'subsidair', 'subtansi', 'subtitusi', 'sub tropik', 'sub unit', 'suka cita', 'seruling', 'sunnah', 'sundel', 'sop', 'superman', 'saplemen', 'suplement', 'supermasi', 'surat', 'sorga', 'syurga', 'survai', 'survay', 'surve', 'survey', 'susastera', 'sutra', 'souvenir', 'swa sembada', 'suiter', 'sempoa', 'sipoa', "syafa'at", 'sahadat', 'sahid', 'syahit', 'sahwat', 'syareat', 'syarekat', 'she', 'syeikh', 'sirik', 'shogun', 'syubat', 'syubkhat', 'suhada', 'sukur', 'sur', "ta'ala", 'tabligh', 'tahiyat', 'tahta', 'taxi', 'taqwa', 'takjim', "ta'zim", 'talek', 'nampak', 'tamzil', 'tangker', 'tauco', 'tauge', 'toge', 'tape', 'tapelak', 'thoriqoh', 'thoriqot', 'tarhim', 'tarkim', 'tataniaga', 'tatto', 'thawaf', 'tawakkal', 'theater', 'tekat', 'tehnik', 'tekhnik', 'tehnologi', 'tekhnologi', 'taulada', 'tauladan', 'toladan', 'terlanjur', 'terlantar', 'terlentang', 'telefon', 'telephone', 'telfon', 'telpon', 'telor', 'temugiring', 'trenggiling', 'tentram', 'theologi', 'teoritis', 'tepa selira', 'tepo seliro', 'terpercaya', 'terperdaya', 'trampil', 'keburu', 'trengginas', 'terimakasih', 'tripang', 'tritis', 'tromol', 'ketawa', 'trubus', 'taruna', 'terong', 'teruwelu', 'truwelu', 'tersina', 'test', 'thesis', 'tes', 'tapi', 'tipes', 'ticket', 'team', 'tips', 'type', 'tepekong', 'toa pekong', 'taubat', 'teke', 'tekek', 'tolerir', 'tonel', 'topaz', 'top hit', 'terpedo', 'tradisionil', 'trapo', 'trachome', 'trakhom', 'trans Jakarta', 'tribun', 'trinale', 'trilyun', 'triplek', 'triplex', 'trophi', 'tropi', 'trofosfir', 'trotoir', 'temenggung', 'tuna netra', 'tungro', 'tour', 'turbo jet', 'touris', 'tournamen', 'turnament', 'tut', 'robah', 'rubah', 'obrak-abrik', 'ujian ulangan', 'ukhrowi', 'okulele', 'ultra modern', 'uneg-uneg', 'urin', 'husada', 'ustad', 'ustadz', 'ustadzah', 'hutang', 'fak', 'faksinasi', 'fakum', 'vacum', 'valentin', 'falid', 'vampire', 'panili', 'vanilli', 'varitas', 'varices', 'fas', 'vaskuler', 'vegetarian', 'vermaks', 'pernis', 'villa', 'vignet', 'jaman', 'zam-zam', 'dzat', 'dhuhur', 'lohor', 'zigote', 'zygot', 'zig-zag', 'dzikir', 'jina', 'zinah', 'sitar', 'siter', 'zone', 'dzuhur', 'zhuhur', 'atheisme', 'brantas', 'berfikir', 'bertanggungjawab', 'berankas', 'debitor', 'dijit', 'differensial', 'drem', 'donator', 'ensiklopedi', 'giji', 'angus', 'herves', 'hetrografi', 'history', 'hatam', 'kuatir', 'client', 'keliping', 'keloter', 'ne tralisir', 'pebruari', 'philipina', 'sansekerta', 'selektifitas', 'wali kota', 'jogjakarta', 'judikatif', 'judisial', 'jurisdiksi', 'jamrud', 'zigzag'];
+// Configuration
+const DICTIONARY_URL = './daftar_baku_lantip.json';
 
-const btn1 = document.querySelector('.btn-1');
-const btn2 = document.querySelector('.btn-2');
-
-const correctStat = document.querySelector('.correct-count');
-const wrongStat = document.querySelector('.wrong-count');
-
-btn1.addEventListener('click', answer);
-btn2.addEventListener('click', answer);
-
-const answerText = document.querySelector('.answer-text');
-
-let lastIndex = -1;
-let index = -1;
-
+// Game State
+let kataPairs = []; // Array of {tidakBaku, baku} pairs
+let currentQuestion = null;
 let correctCount = 0;
 let wrongCount = 0;
+let soundEnabled = true;
+let darkMode = false;
 
+// DOM Elements
+const btn1 = document.querySelector('.btn-1');
+const btn2 = document.querySelector('.btn-2');
+const answerText = document.querySelector('.answer-text');
+const correctStat = document.querySelector('.correct-count');
+const wrongStat = document.querySelector('.wrong-count');
+const soundButton = document.querySelector('.btn-sound');
+const themeButton = document.querySelector('.btn-theme');
+
+// Audio
 const correctSound = new Audio("https://zenoxetine.github.io/kataBaku/audio/correct.wav");
 const wrongSound = new Audio("https://zenoxetine.github.io/kataBaku/audio/wrong.mp3");
 
-const soundButton = document.querySelector(".btn-sound");
-let sound = true;
-
-soundButton.addEventListener("click", function () {
-  const icon = soundButton.querySelector("i");
-  icon.classList.toggle("fa-volume-up");
-  icon.classList.toggle("fa-volume-mute");
-  sound = !sound;
-});
-
-function SetUp() {
-    while (index === lastIndex) {
-        index = Math.floor(Math.random() * baku.length);
-    }
-    const correctButton = Math.floor(Math.random() * 2);
-    if (correctButton === 0) {
-        btn1.textContent = baku[index];
-        btn2.textContent = tidakBaku[index];
-    } else {
-        btn1.textContent = tidakBaku[index];
-        btn2.textContent = baku[index];
-    }
-    lastIndex = index;
-}
-
-function answer(e) {
-    if (e.currentTarget.textContent === baku[lastIndex]) {
-        const answerString = `Jawaban Anda, "${e.currentTarget.textContent}", benar!`;
-        answerText.textContent = answerString;
-        answerText.classList.remove('wrong');
-        answerText.classList.add('correct');
-        correctCount += 1;
-        correctStat.textContent = correctCount;
-        if (sound) {
-            correctSound.play();
+// Initialize Game
+async function initGame() {
+    // Load settings
+    loadSettings();
+    
+    // Load dictionary
+    try {
+        await loadDictionary();
+        if (kataPairs.length === 0) {
+            throw new Error('Kamus kosong');
         }
-        SetUp();
-    } else {
-        const answerString = `Jawaban Anda, "${e.currentTarget.textContent}", salah!`;
-        answerText.textContent = answerString;
-        answerText.classList.remove('correct');
+        generateQuestion();
+    } catch (error) {
+        console.error('Gagal memuat kamus:', error);
+        answerText.textContent = 'Gagal memuat kamus. Coba muat ulang halaman.';
         answerText.classList.add('wrong');
-        wrongCount += 1;
-        wrongStat.textContent = wrongCount;
-        if (sound) {
-            wrongSound.play();
-        }
-        SetUp();
+    }
+    
+    // Set up event listeners
+    setupEventListeners();
+}
+
+// Load dictionary from URL
+async function loadDictionary() {
+    const response = await fetch(DICTIONARY_URL);
+    if (!response.ok) {
+        throw new Error('Gagal mengambil kamus');
+    }
+    
+    const kataDict = await response.json();
+    kataPairs = Object.entries(kataDict).map(([tidakBaku, baku]) => ({
+        tidakBaku,
+        baku
+    }));
+}
+
+// Generate new question
+function generateQuestion() {
+    const randomIndex = Math.floor(Math.random() * kataPairs.length);
+    currentQuestion = kataPairs[randomIndex];
+    
+    // Randomize button positions
+    if (Math.random() < 0.5) {
+        btn1.textContent = currentQuestion.baku;
+        btn2.textContent = currentQuestion.tidakBaku;
+    } else {
+        btn1.textContent = currentQuestion.tidakBaku;
+        btn2.textContent = currentQuestion.baku;
     }
 }
 
-SetUp();
+// Handle answer
+function handleAnswer(selectedButton) {
+    const selectedText = selectedButton.textContent;
+    const isCorrect = selectedText === currentQuestion.baku;
+    
+    if (isCorrect) {
+        correctCount++;
+        correctStat.textContent = correctCount;
+        answerText.innerHTML = `Jawaban Anda, "<a class='link' target='_blank' href='https://kbbi.web.id/${selectedText}'>${selectedText}</a>", benar!`;
+        answerText.className = 'answer-text correct';
+        playSound(true);
+    } else {
+        wrongCount++;
+        wrongStat.textContent = wrongCount;
+        answerText.innerHTML = `Jawaban Anda, "${selectedText}", salah. <br> Jawaban yang benar adalah: "<a class='link' target='_blank' href='https://kbbi.web.id/${currentQuestion.baku}'>${currentQuestion.baku}</a>"`;
+        answerText.className = 'answer-text wrong';
+        playSound(false);
+    }
+    
+    generateQuestion();
+}
+
+// Sound functions
+function toggleSound() {
+    soundEnabled = !soundEnabled;
+    localStorage.setItem('sound', soundEnabled);
+    updateSoundIcon();
+}
+
+function playSound(isCorrect) {
+    if (!soundEnabled) return;
+    
+    const sound = isCorrect ? correctSound : wrongSound;
+    sound.currentTime = 0;
+    sound.play().catch(e => console.log('Gagal memainkan suara:', e));
+}
+
+function updateSoundIcon() {
+    const icon = soundButton.querySelector('i');
+    icon.className = soundEnabled ? 'fas fa-volume-up' : 'fas fa-volume-mute';
+}
+
+// Theme functions
+function toggleTheme() {
+    darkMode = !darkMode;
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+    applyTheme();
+}
+
+function applyTheme() {
+    if (darkMode) {
+        document.documentElement.style.setProperty('--headingColor', '#5ce1e6');
+        document.documentElement.style.setProperty('--textColor', '#d4f1f4');
+        document.documentElement.style.setProperty('--backgroundColor', '#0f172a');
+        document.documentElement.style.setProperty('--correctColor', '#00b894');
+        document.documentElement.style.setProperty('--wrongColor', '#ff6b6b');
+    } else {
+        document.documentElement.style.setProperty('--headingColor', '#029e9d');
+        document.documentElement.style.setProperty('--textColor', '#2f3e46');
+        document.documentElement.style.setProperty('--backgroundColor', '#ffffff');
+        document.documentElement.style.setProperty('--correctColor', '#00b894');
+        document.documentElement.style.setProperty('--wrongColor', '#d62828');
+    }
+    updateThemeIcon();
+}
+
+function updateThemeIcon() {
+    const icon = themeButton.querySelector('i');
+    icon.className = darkMode ? 'fas fa-sun' : 'fas fa-moon';
+}
+
+// Load settings from localStorage
+function loadSettings() {
+    soundEnabled = localStorage.getItem('sound') !== 'false';
+    darkMode = localStorage.getItem('theme') === 'dark';
+    applyTheme();
+    updateSoundIcon();
+}
+
+// Set up event listeners
+function setupEventListeners() {
+    btn1.addEventListener('click', () => handleAnswer(btn1));
+    btn2.addEventListener('click', () => handleAnswer(btn2));
+    soundButton.addEventListener('click', toggleSound);
+    themeButton.addEventListener('click', toggleTheme);
+}
+
+// Start the game when page loads
+document.addEventListener('DOMContentLoaded', initGame);
