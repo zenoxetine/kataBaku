@@ -81,7 +81,7 @@ function handleAnswer(selectedButton) {
     if (isCorrect) {
         correctCount++;
         correctStat.textContent = correctCount;
-        answerText.innerHTML = `Jawaban Anda, "<a class='link' target='_blank' href='https://kbbi.web.id/${selectedText}'>${selectedText}</a>", benar!`;
+        answerText.innerHTML = `Jawaban Anda, "<a class='link' target='_blank' href='https://kbbi.kemdikbud.go.id/entri/${selectedText}'>${selectedText}</a>", benar!`;
         answerText.className = 'answer-text correct';
         playSound(true);
     } else {
